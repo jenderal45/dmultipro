@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D’MULTI PRO CONSULTING | Solusi Terpadu untuk Data dan Bisnis</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#0f2a44;
+    --secondary:#1e88e5;
+    --accent:#00bcd4;
+    --light:#f4f7fb;
+    --dark:#0b1c2d;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#fff;
+    color:#333;
+    line-height:1.6;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#fff;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 20px;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+.nav-menu{
+    display:flex;
+    gap:28px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    font-weight:500;
+    color:#333;
+    transition:.3s;
+}
+
+.nav-menu a:hover{
+    color:var(--secondary);
+}
+
+/* HERO */
+.hero{
+    padding:140px 20px 100px;
+    background:linear-gradient(135deg,var(--primary),var(--dark));
+    color:#fff;
+}
+
+.hero-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:44px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--accent);
+}
+
+.hero p{
+    font-size:18px;
+    opacity:.9;
+    margin-bottom:32px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:var(--secondary);
+    color:#fff;
+    padding:14px 32px;
+    border-radius:40px;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:#1565c0;
+    transform:translateY(-2px);
+}
+
+.hero-card{
+    background:rgba(255,255,255,.08);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter: blur(10px);
+}
+
+/* SECTION */
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:36px;
+    color:var(--primary);
+}
+
+.section-title p{
+    max-width:700px;
+    margin:16px auto 0;
+    color:#555;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.service-card{
+    background:#fff;
+    padding:40px 30px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,var(--secondary),var(--accent));
+    opacity:0;
+    transition:.4s;
+}
+
+.service-card:hover::before{
+    opacity:.08;
+}
+
+.service-card:hover{
+    transform:translateY(-12px);
+}
+
+.service-icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.service-card h3{
+    font-size:22px;
+    margin-bottom:12px;
+    color:var(--primary);
+}
+
+.service-card p{
+    color:#555;
+}
+
+/* ABOUT */
+.about{
+    background:var(--light);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about h3{
+    font-size:28px;
+    margin-bottom:20px;
+    color:var(--primary);
+}
+
+.about ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.about ul li{
+    margin-bottom:12px;
+    padding-left:24px;
+    position:relative;
+}
+
+.about ul li::before{
+    content:"✔";
+    position:absolute;
+    left:0;
+    color:var(--secondary);
+}
+
+/* CTA */
+.cta{
+    background:linear-gradient(135deg,var(--secondary),var(--accent));
+    color:#fff;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:34px;
+    margin-bottom:16px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:0 auto 30px;
+}
+
+.cta a{
+    background:#fff;
+    color:var(--secondary);
+    padding:14px 34px;
+    border-radius:40px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    background:var(--dark);
+    color:#bbb;
+    padding:50px 20px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+}
+
+footer h4{
+    color:#fff;
+    margin-bottom:14px;
+}
+
+footer p{
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .hero-container,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .nav-menu{
+        display:none;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">D’MULTI <span>PRO</span></div>
+        <div class="nav-menu">
+            <a href="#layanan">Layanan</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-container">
+        <div>
+            <h1>D’MULTI PRO <span>CONSULTING</span></h1>
+            <p>Solusi terpadu dan profesional untuk kebutuhan olah data, keuangan, administrasi, serta layanan psikologi yang terpercaya.</p>
+            <a href="#kontak" class="hero-btn">Konsultasi Sekarang</a>
+        </div>
+        <div class="hero-card">
+            <h3>Profesional • Terpercaya • Terintegrasi</h3>
+            <p>Kami hadir sebagai mitra strategis untuk individu, akademisi, UMKM, dan organisasi.</p>
+        </div>
+    </div>
+</section>
+
+<section id="layanan">
+    <div class="container">
+        <div class="section-title">
+            <h2>Layanan Kami</h2>
+            <p>Solusi menyeluruh yang dirancang untuk mendukung kebutuhan akademik, bisnis, dan pengembangan individu.</p>
+        </div>
+
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Olah Data & Akademik</h3>
+                <p>Pengolahan data statistik, SPSS, SEM, SmartPLS, pendampingan skripsi, tesis, dan disertasi.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Keuangan & Administrasi</h3>
+                <p>Laporan keuangan, pembukuan, administrasi bisnis, UMKM, dan konsultasi manajemen.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3>Layanan Psikologi</h3>
+                <p>Konseling, asesmen psikologi, pengembangan SDM, dan pendampingan individu maupun organisasi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tentang" class="about">
+    <div class="container about-grid">
+        <div>
+            <h3>Tentang D’MULTI PRO</h3>
+            <p>D’MULTI PRO CONSULTING adalah penyedia jasa profesional yang mengintegrasikan keilmuan, praktik bisnis, dan pendekatan psikologis untuk solusi yang komprehensif.</p>
+            <ul>
+                <li>Tim berpengalaman & multidisipliner</li>
+                <li>Pelayanan berbasis kebutuhan klien</li>
+                <li>Profesional & beretika</li>
+            </ul>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" style="width:100%;border-radius:20px;">
+        </div>
+    </div>
+</section>
+
+<section class="cta" id="kontak">
+    <div class="container">
+        <h2>Siap Menjadi Mitra Strategis Anda</h2>
+        <p>Konsultasikan kebutuhan Anda bersama tim profesional D’MULTI PRO CONSULTING.</p>
+        <a href="https://wa.me/628xxxxxxxxxx" target="_blank">Hubungi via WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div>
+            <h4>D’MULTI PRO CONSULTING</h4>
+            <p>Solusi Terpadu untuk Data dan Bisnis</p>
+        </div>
+        <div>
+            <h4>Kontak</h4>
+            <p>Email: info@dmultipro.com<br>WhatsApp: 08xxxxxxxxxx</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
